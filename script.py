@@ -1,39 +1,38 @@
 from PIL import Image
 import os
 
-# Desired dimensions for the resized images
+# Dimensiuni dorite pentru imaginile redimensionate
 width = 300
 height = 200
 
-# List of image files for the C++ projects
-cpp_images = [
+# Lista de imagini pentru proiecte
+project_images = [
     "Budget traker.jpeg",
     "Phone Agenda.jpeg"
 ]
 
-# Path to the directory where the images are located
+# Calea către directorul în care se află imaginile
 images_directory = 'C:\\Users\\mihai\\html-css-js portofolio\\html-css-js-portofolio\\assets\\'
 
-# Iterate through each image and resize it
-for image in cpp_images:
+# Redimensionează fiecare imagine
+for image in project_images:
     image_path = os.path.join(images_directory, image)
     if os.path.exists(image_path):
         img = Image.open(image_path)
-        # Preserve aspect ratio and pad with white background
-        img.thumbnail((width, height))
-        padded_img = Image.new("RGB", (width, height), "white")
-        x_offset = (width - img.width) // 2
-        y_offset = (height - img.height) // 2
-        padded_img.paste(img, (x_offset, y_offset))
-        padded_img.save(image_path)
-        print(f"Resized {image} to {width}x{height}")
+        
+        # Redimensionează imaginea la dimensiunile exacte
+        resized_img = img.resize((width, height), Image.ANTIALIAS)
+        
+        # Salvează imaginea redimensionată
+        resized_img.save(image_path)
+        print(f"Redimensionat {image} la {width}x{height}")
     else:
-        print(f"Image {image} was not found in the specified directory.")
+        print(f"Imaginea {image} nu a fost găsită în directorul specificat.")
 
-# Check if the file exists
-for image in cpp_images:
+# Verifică dacă fișierele există
+for image in project_images:
     file_path = os.path.join(images_directory, image)
     if os.path.exists(file_path):
-        print(f"File {image} exists.")
+        print(f"Fișierul {image} există.")
     else:
-        print(f"File {image} does not exist or the path is incorrect.")
+        print(f"Fișierul {image} nu există sau calea este incorectă.")
