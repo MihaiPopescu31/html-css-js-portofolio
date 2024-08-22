@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../WEB DEVELOPMENT COURSE/REACT JS/293-keeper-app-part-1-challenge-start/293-keeper-app-part-1-challenge/public"
+		},
+		{
+			"path": "../../WEB DEVELOPMENT COURSE/REACT JS/293-keeper-app-part-1-challenge-start/293-keeper-app-part-1-challenge/src"
+		},
+		{
+			"path": "../../WEB DEVELOPMENT COURSE"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WEB DEVELOPMENT COURSE"
+	}
+}
